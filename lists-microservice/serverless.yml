@@ -112,9 +112,9 @@ functions:
                 listId: true
                 recipientId: true
 
-  getRecipients:
-    handler: src/ApiHandler.getRecipients
-    name: ${self:custom.resourcesPrefix}-getRecipients
+  getRecipient:
+    handler: src/ApiHandler.getRecipient
+    name: ${self:custom.resourcesPrefix}-getRecipient
     events:
       - http:
           path: /lists/{listId}/recipients/{recipientId}
