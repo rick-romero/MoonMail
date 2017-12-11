@@ -1,0 +1,159 @@
+service: MoonMail-v2-lists
+
+plugins:
+  - serverless-plugin-optimize
+  - serverless-offline
+  - serverless-aws-documentation
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  profile: ${self:service}-${self:custom.currentStage}
+  region: ${file(./config.${self:custom.currentStage}.json):REGION}
+  timeout: 300
+  environment:
+    LOG_LEVEL: ${file(./config.${self:custom.currentStage}.json):LOG_LEVEL}
+    LISTS_TABLE: ${file(./config.${self:custom.currentStage}.json):LISTS_TABLE}
+    RECIPIENTS_TABLE: ${file(./config.${self:custom.currentStage}.json):RECIPIENTS_TABLE}
+    ES_HOST: ${file(./config.${self:custom.currentStage}.json):ES_HOST}
+    ES_REGION: ${file(./config.${self:custom.currentStage}.json):ES_REGION}
+    LIST_RECIPIENT_STREAM_NAME: ListEventStream
+    IOT_ENDPOINT: ${file(./config.${self:custom.currentStage}.json):IOT_ENDPOINT}
+    GET_USER_CONTEXT_FUNCTION: ${file(./config.${self:custom.currentStage}.json):GET_USER_CONTEXT_FUNCTION}
+    #DEBUG: true
+
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "dynamodb:*"
+        - "lambda:*"
+        - "kinesis:*"
+        - "s3:*"
+        - "logs:*"
+        - "iot:*"
+        - "ec2:CreateNetworkInterface"
+        - "ec2:DescribeNetworkInterfaces"
+        - "ec2:DeleteNetworkInterface"
+      Resource: "*"
+
+custom:
+  defaultStage: dev
+  currentStage: ${opt:stage, self:custom.defaultStage}
+  resourcesPrefix: ${self:service}-${self:custom.currentStage}
+  recipientsBucket: next-recipients.moonmail.${self:custom.currentStage}.${self:provider.region}
+  serverless-offline:
+    babelOptions:
+      presets: ["es2015"]
+  
+
+package:
+  individually: true
+
+functions:
+  importRecipients:
+    handler: src/RecipientCommandsHandler.importRecipientsCsvFromS3
+    name: ${self:custom.resourcesPrefix}-importRecipients
+    events:
+      - s3:
+          bucket: ${self:custom.recipientsBucket}
+          event: s3:ObjectCreated:*
+
+  recipientImportedEventHandler:
+    handler: src/RecipientEventProcessorsHandler.recipientImportedHandler
+    name: ${self:custom.resourcesPrefix}-recipientImportedEventHandler
+    events:
+      - stream:
+          type: kinesis
+          batchSize: 100
+          startingPosition: TRIM_HORIZON
+          arn: 
+            Fn::GetAtt:
+              - ListEventStream
+              - Arn
+  
+  createRecipient:
+    handler: src/ApiHandler.createRecipient
+    name: ${self:custom.resourcesPrefix}-createRecipient
+    events:
+      - http:
+          path: /lists/{listId}/recipients
+          method: post
+          private: true
+          request:
+            parameters:
+              paths: 
+                listId: true
+
+  updateRecipient:
+    handler: src/ApiHandler.updateRecipient
+    name: ${self:custom.resourcesPrefix}-updateRecipient
+    events:
+      - http:
+          path: /lists/{listId}/recipients/{recipientId}
+          method: put
+          private: true
+          request:
+            parameters:
+              paths: 
+                listId: true
+                recipientId: true
+
+  deleteRecipient:
+    handler: src/ApiHandler.deleteRecipient
+    name: ${self:custom.resourcesPrefix}-deleteRecipient
+    events:
+      - http:
+          path: /lists/{listId}/recipients/{recipientId}
+          method: delete
+          private: true
+          request:
+            parameters:
+              paths: 
+                listId: true
+                recipientId: true
+
+  getRecipients:
+    handler: src/ApiHandler.getRecipients
+    name: ${self:custom.resourcesPrefix}-getRecipients
+    events:
+      - http:
+          path: /lists/{listId}/recipients/{recipientId}
+          method: get
+          private: true
+          request:
+            parameters:
+              paths: 
+                listId: true
+                recipientId: true 
+
+  listRecipients:
+    handler: src/ApiHandler.listRecipients
+    name: ${self:custom.resourcesPrefix}-listRecipients
+    events:
+      - http:
+          path: /lists/{listId}/recipients
+          method: get
+          private: true
+          request:
+            parameters:
+              paths: 
+                listId: true
+              querystring:
+                size: true
+                from: true
+                
+
+resources:
+  Resources:
+    ListEventStream:
+      Type: AWS::Kinesis::Stream
+      Properties:
+        Name: ListEventStream
+        ShardCount: 1
+  Outputs:
+    ListEventStreamARN:
+      Description: ListEventStream Kinesis Stream ARN
+      Value:
+        'Fn::GetAtt':
+          - ListEventStream
+          - Arn
