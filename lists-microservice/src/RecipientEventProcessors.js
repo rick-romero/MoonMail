@@ -1,7 +1,6 @@
 import LambdaUtils from './lib/LambdaUtils';
 import Lists from './domain/Lists';
 import Events from './domain/Events';
-import Recipients from './domain/Recipients';
 import App from './App';
 
 
@@ -16,7 +15,7 @@ function recipientImportedProcessor(event, context, callback) {
   if (recipients.some(e => !Events.isValid(e))) {
     const error = '[ERROR], Invalid events detected in the stream';
     App.logger().error(error);
-    callback(new Error(error));
+    callback(new Error(JSON.stringify(error)));
   }
   const validRecipients = recipients.filter(Events.isValid);
   return Lists.importRecipientsBatch(validRecipients)
@@ -35,11 +34,10 @@ function recipientCreatedProcessor(event, context, callback) {
     .parseKinesisStreamTopicEvents(event, Events.listRecipientCreated);
 
   const invalidEvents = recipients.filter(e => !Events.isValid(e));
-  console.log('>>>>>', JSON.stringify(invalidEvents));
   if (invalidEvents.length > 0) {
     const { error } = Events.validate(invalidEvents.shift());
     App.logger().error(error);
-    callback(new Error(error));
+    callback(new Error(JSON.stringify(error)));
   }
 
   const validEvents = recipients.filter(Events.isValid);
@@ -63,7 +61,7 @@ function recipientUpdatedProcessor(event, context, callback) {
   if (invalidEvents.length > 0) {
     const { error } = Events.validate(invalidEvents.shift());
     App.logger().error(error);
-    callback(new Error(error));
+    callback(new Error(JSON.stringify(error)));
   }
   const validEvents = recipients.filter(Events.isValid);
   return Lists.updateRecipientsBatch(validEvents)
@@ -85,7 +83,7 @@ function recipientDeletedProcessor(event, context, callback) {
   if (invalidEvents.length > 0) {
     const { error } = Events.validate(invalidEvents.shift());
     App.logger().error(error);
-    callback(new Error(error));
+    callback(new Error(JSON.stringify(error)));
   }
   const validEvents = recipients.filter(Events.isValid);
   return Lists.deleteRecipientsBatch(validEvents)
