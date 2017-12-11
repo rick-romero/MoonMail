@@ -34,14 +34,17 @@ function recipientCreatedProcessor(event, context, callback) {
   const recipients = LambdaUtils
     .parseKinesisStreamTopicEvents(event, Events.listRecipientCreated);
 
-  // TODO: Evaluate if it's better to use validate instead of isValid
-  if (recipients.some(e => !Events.isValid(e))) {
-    const error = '[ERROR], Invalid events detected in the stream';
+  const invalidEvents = recipients.filter(e => !Events.isValid(e));
+  console.log('>>>>>', JSON.stringify(invalidEvents));
+  if (invalidEvents.length > 0) {
+    const { error } = Events.validate(invalidEvents.shift());
     App.logger().error(error);
     callback(new Error(error));
   }
-  const validRecipients = recipients.filter(Events.isValid);
-  return Lists.createRecipientsBatch(validRecipients)
+
+  const validEvents = recipients.filter(Events.isValid);
+  console.log('>>>>>', JSON.stringify(validEvents));
+  return Lists.createRecipientsBatch(validEvents)
     .then(result => callback(null, result))
     .catch((err) => {
       App.logger().error(err);
@@ -56,14 +59,14 @@ function recipientUpdatedProcessor(event, context, callback) {
   const recipients = LambdaUtils
     .parseKinesisStreamTopicEvents(event, Events.listRecipientUpdated);
 
-  // TODO: Evaluate if it's better to use validate instead of isValid
-  if (recipients.some(e => !Events.isValid(e))) {
-    const error = '[ERROR], Invalid events detected in the stream';
+  const invalidEvents = recipients.filter(e => !Events.isValid(e));
+  if (invalidEvents.length > 0) {
+    const { error } = Events.validate(invalidEvents.shift());
     App.logger().error(error);
     callback(new Error(error));
   }
-  const validRecipients = recipients.filter(Events.isValid);
-  return Lists.updateRecipientsBatch(validRecipients)
+  const validEvents = recipients.filter(Events.isValid);
+  return Lists.updateRecipientsBatch(validEvents)
     .then(result => callback(null, result))
     .catch((err) => {
       App.logger().error(err);
@@ -78,14 +81,14 @@ function recipientDeletedProcessor(event, context, callback) {
   const recipients = LambdaUtils
     .parseKinesisStreamTopicEvents(event, Events.listRecipientDeleted);
 
-  // TODO: Evaluate if it's better to use validate instead of isValid
-  if (recipients.some(e => !Events.isValid(e))) {
-    const error = '[ERROR], Invalid events detected in the stream';
+  const invalidEvents = recipients.filter(e => !Events.isValid(e));
+  if (invalidEvents.length > 0) {
+    const { error } = Events.validate(invalidEvents.shift());
     App.logger().error(error);
     callback(new Error(error));
   }
-  const validRecipients = recipients.filter(Events.isValid);
-  return Lists.deleteRecipientsBatch(validRecipients)
+  const validEvents = recipients.filter(Events.isValid);
+  return Lists.deleteRecipientsBatch(validEvents)
     .then(result => callback(null, result))
     .catch((err) => {
       App.logger().error(err);

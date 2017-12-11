@@ -50,16 +50,9 @@ package:
   individually: true
 
 functions:
-  importRecipients:
-    handler: src/RecipientCommandsHandler.importRecipientsCsvFromS3
-    name: ${self:custom.resourcesPrefix}-importRecipients
-    events:
-      - s3:
-          bucket: ${self:custom.recipientsBucket}
-          event: s3:ObjectCreated:*
-
+  # Event handlers
   recipientImportedEventHandler:
-    handler: src/RecipientEventProcessorsHandler.recipientImportedHandler
+    handler: src/RecipientEventProcessorsHandler.recipientImportedProcessor
     name: ${self:custom.resourcesPrefix}-recipientImportedEventHandler
     events:
       - stream:
@@ -71,6 +64,54 @@ functions:
               - ListEventStream
               - Arn
   
+  recipientCreatedEventHandler:
+    handler: src/RecipientEventProcessorsHandler.recipientCreatedProcessor
+    name: ${self:custom.resourcesPrefix}-recipientCreatedEventHandler
+    events:
+      - stream:
+          type: kinesis
+          batchSize: 100
+          startingPosition: TRIM_HORIZON
+          arn: 
+            Fn::GetAtt:
+              - ListEventStream
+              - Arn
+
+  recipientUpdatedEventHandler:
+    handler: src/RecipientEventProcessorsHandler.recipientUpdatedProcessor
+    name: ${self:custom.resourcesPrefix}-recipientUpdatedEventHandler
+    events:
+      - stream:
+          type: kinesis
+          batchSize: 100
+          startingPosition: TRIM_HORIZON
+          arn: 
+            Fn::GetAtt:
+              - ListEventStream
+              - Arn
+  
+  recipientDeletedEventHandler:
+    handler: src/RecipientEventProcessorsHandler.recipientDeletedProcessor
+    name: ${self:custom.resourcesPrefix}-recipientDeletedEventHandler
+    events:
+      - stream:
+          type: kinesis
+          batchSize: 100
+          startingPosition: TRIM_HORIZON
+          arn: 
+            Fn::GetAtt:
+              - ListEventStream
+              - Arn
+
+  importRecipients:
+    handler: src/RecipientCommandsHandler.importRecipientsCsvFromS3
+    name: ${self:custom.resourcesPrefix}-importRecipients
+    events:
+      - s3:
+          bucket: ${self:custom.recipientsBucket}
+          event: s3:ObjectCreated:*
+
+  # Public API
   createRecipient:
     handler: src/ApiHandler.createRecipient
     name: ${self:custom.resourcesPrefix}-createRecipient
