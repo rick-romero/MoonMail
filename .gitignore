@@ -1,2 +1,7 @@
 .idea/
 node_modules/
+_meta/
+api/
+lists-microservice/
+private/
+admin.env
