@@ -26,16 +26,16 @@
             <a href="#tag-Recipients">Recipients</a>
             <ul>
               <li>
-                <a href="#operation--lists--listId--recipients-get"> Gets a list of recipients </a>
+                <a href="#operation--dev--listId--recipients-get"> Gets a list of recipients </a>
               </li>
               <li>
-                <a href="#operation--lists--listId--recipients-post"> Creates a recipient </a>
+                <a href="#operation--dev--listId--recipients-post"> Creates a recipient </a>
               </li>
               <li>
-                <a href="#operation--lists--listId--recipients--recipientId--get"> Gets a recipient </a>
+                <a href="#operation--dev--listId--recipients--recipientId--get"> Gets a recipient </a>
               </li>
               <li>
-                <a href="#operation--lists--listId--recipients--recipientId--put"> Updates a recipient </a>
+                <a href="#operation--dev--listId--recipients--recipientId--put"> Updates a recipient </a>
               </li>
             </ul>
           </section>
@@ -43,7 +43,7 @@
             <a href="#tag-Lists">Lists</a>
             <ul>
               <li>
-                <a href="#operation--lists--get"> Gets all the user&#x27;s lists </a>
+                <a href="#operation--dev--get"> Gets all the user&#x27;s lists </a>
               </li>
             </ul>
           </section>
@@ -89,7 +89,7 @@
                     <span>https</span>
                   </h5>
                   <h5>Version:
-                    <span>2018-01-31T10:47:44Z</span>
+                    <span>2018-02-20T08:57:55Z</span>
                   </h5>
                 </section>
               </div>
@@ -127,7 +127,7 @@
               <p>Email recipients</p>
             </div>
           </div>
-          <div id="operation--lists--listId--recipients-get" class="operation panel" data-traverse-target="operation--lists--listId--recipients-get">
+          <div id="operation--dev--listId--recipients-get" class="operation panel" data-traverse-target="operation--dev--listId--recipients-get">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
@@ -143,14 +143,15 @@
               <div class="doc-copy">
                 <section class="swagger-operation-path">
                   <span class="operation-method">GET</span>
-                  <span class="operation-path">/lists/{listId}/recipients</span>
+                  <span class="operation-path">/dev/{listId}/recipients</span>
                 </section>
               </div>
             </div>
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Gets a set recipients of the specified list.</p>
+                  <p>Gets a set recipients of the specified list. You can get the list ID in your
+                    <a target="_blank" href="https://app.moonmail.io/lists">MoonMail dashboard</a>, under the Settings tab after selecting your list</p>
                 </section>
               </div>
             </div>
@@ -247,52 +248,52 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">4297729</span>,
+  <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">74490385</span>,
   <span class="hljs-attr">&quot;items&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13b000a0r8hapcc3dx0&quot;</span>,
+      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g53000gjsp66a6djyoi&quot;</span>,
       <span class="hljs-attr">&quot;metadata&quot;</span>: {
-        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Amy&quot;</span>,
-        <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Collier&quot;</span>,
-        <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;MH&quot;</span>,
-        <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
-      },
-      <span class="hljs-attr">&quot;subscriptionOrigin&quot;</span>: <span class="hljs-string">&quot;signupForm&quot;</span>,
-      <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13b000b0r8h3ix6fz6q&quot;</span>,
-      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13b000c0r8h3znd0qol&quot;</span>,
-      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;kuplefjo@upezug.eu&quot;</span>,
-      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;awaitingConfirmation&quot;</span>
-    },
-    {
-      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13c000d0r8hzqo374qe&quot;</span>,
-      <span class="hljs-attr">&quot;metadata&quot;</span>: {
-        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Gertrude&quot;</span>,
-        <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Horton&quot;</span>,
-        <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;RU&quot;</span>,
-        <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
-      },
-      <span class="hljs-attr">&quot;subscriptionOrigin&quot;</span>: <span class="hljs-string">&quot;signupForm&quot;</span>,
-      <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13c000e0r8haccjox4u&quot;</span>,
-      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13c000f0r8h6lmo3ozc&quot;</span>,
-      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;ehli@camleijo.am&quot;</span>,
-      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;subscribed&quot;</span>
-    },
-    {
-      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13c000g0r8h5qui2or0&quot;</span>,
-      <span class="hljs-attr">&quot;metadata&quot;</span>: {
-        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Joseph&quot;</span>,
-        <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Simon&quot;</span>,
-        <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;HK&quot;</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Sallie&quot;</span>,
+        <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Brady&quot;</span>,
+        <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;JO&quot;</span>,
         <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
       },
       <span class="hljs-attr">&quot;subscriptionOrigin&quot;</span>: <span class="hljs-string">&quot;listImport&quot;</span>,
       <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13c000h0r8htao96w1i&quot;</span>,
-      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13c000i0r8hz1qv4fko&quot;</span>,
-      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;ju@wewhi.nz&quot;</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g53000hjsp6urb8602f&quot;</span>,
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g53000ijsp6r0takx2q&quot;</span>,
+      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;we@ub.tl&quot;</span>,
       <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;awaitingConfirmation&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000jjsp66y3nb17d&quot;</span>,
+      <span class="hljs-attr">&quot;metadata&quot;</span>: {
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Cynthia&quot;</span>,
+        <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Guzman&quot;</span>,
+        <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;NU&quot;</span>,
+        <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
+      },
+      <span class="hljs-attr">&quot;subscriptionOrigin&quot;</span>: <span class="hljs-string">&quot;api&quot;</span>,
+      <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000kjsp6pnxlx7wj&quot;</span>,
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000ljsp61tgmy0zp&quot;</span>,
+      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;zasubam@ehukala.rs&quot;</span>,
+      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;subscribed&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000mjsp6sxxffy87&quot;</span>,
+      <span class="hljs-attr">&quot;metadata&quot;</span>: {
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Helena&quot;</span>,
+        <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Bates&quot;</span>,
+        <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;UG&quot;</span>,
+        <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
+      },
+      <span class="hljs-attr">&quot;subscriptionOrigin&quot;</span>: <span class="hljs-string">&quot;manual&quot;</span>,
+      <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000njsp61vnk9ez4&quot;</span>,
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000ojsp6rpwpo6ke&quot;</span>,
+      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;be@fok.kh&quot;</span>,
+      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;subscribed&quot;</span>
     }
   ]
 }
@@ -324,7 +325,7 @@
               </div>
             </div>
           </div>
-          <div id="operation--lists--listId--recipients-post" class="operation panel" data-traverse-target="operation--lists--listId--recipients-post">
+          <div id="operation--dev--listId--recipients-post" class="operation panel" data-traverse-target="operation--dev--listId--recipients-post">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
@@ -340,14 +341,15 @@
               <div class="doc-copy">
                 <section class="swagger-operation-path">
                   <span class="operation-method">POST</span>
-                  <span class="operation-path">/lists/{listId}/recipients</span>
+                  <span class="operation-path">/dev/{listId}/recipients</span>
                 </section>
               </div>
             </div>
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Creates a recipient within the specified list.</p>
+                  <p>Creates a recipient within the specified list. You can get the list ID in your
+                    <a target="_blank" href="https://app.moonmail.io/lists">MoonMail dashboard</a>, under the Settings tab after selecting your list</p>
                 </section>
               </div>
             </div>
@@ -401,13 +403,13 @@
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
   <span class="hljs-attr">&quot;recipient&quot;</span>: {
     <span class="hljs-attr">&quot;metadata&quot;</span>: {
-      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Todd&quot;</span>,
-      <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Johnson&quot;</span>,
-      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;LS&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Antonio&quot;</span>,
+      <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Murphy&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;KP&quot;</span>,
       <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
     },
     <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">false</span>,
-    <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;aw@vegarce.re&quot;</span>,
+    <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;ejo@cej.mu&quot;</span>,
     <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;awaitingConfirmation&quot;</span>
   }
 }
@@ -459,7 +461,7 @@
                   </h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
   <span class="hljs-attr">&quot;recipient&quot;</span>: {
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13100000r8hj6tjq3vk&quot;</span>
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g4v0000jsp62h87lccx&quot;</span>
   }
 }
 </code></pre>
@@ -470,8 +472,8 @@
                     <span>(422 Unprocessable Entity)</span>
                   </h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;elit qui mollit dolor sint&quot;</span>,
-  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;Excepteur proident aute&quot;</span>
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;in veniam&quot;</span>,
+  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;esse in dolor&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -501,7 +503,7 @@
               </div>
             </div>
           </div>
-          <div id="operation--lists--listId--recipients--recipientId--get" class="operation panel" data-traverse-target="operation--lists--listId--recipients--recipientId--get">
+          <div id="operation--dev--listId--recipients--recipientId--get" class="operation panel" data-traverse-target="operation--dev--listId--recipients--recipientId--get">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
@@ -517,14 +519,15 @@
               <div class="doc-copy">
                 <section class="swagger-operation-path">
                   <span class="operation-method">GET</span>
-                  <span class="operation-path">/lists/{listId}/recipients/{recipientId}</span>
+                  <span class="operation-path">/dev/{listId}/recipients/{recipientId}</span>
                 </section>
               </div>
             </div>
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Gets a single recipient of the specified list.</p>
+                  <p>Gets a single recipient of the specified list. You can get the list ID in your
+                    <a target="_blank" href="https://app.moonmail.io/lists">MoonMail dashboard</a>, under the Settings tab after selecting your list</p>
                 </section>
               </div>
             </div>
@@ -611,19 +614,19 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13e000m0r8hwa33bu94&quot;</span>,
+  <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g55000sjsp6c888a0ld&quot;</span>,
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
-    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Travis&quot;</span>,
-    <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Stone&quot;</span>,
-    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Marian&quot;</span>,
+    <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Jimenez&quot;</span>,
+    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;NZ&quot;</span>,
     <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
   },
   <span class="hljs-attr">&quot;subscriptionOrigin&quot;</span>: <span class="hljs-string">&quot;manual&quot;</span>,
-  <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13e000n0r8humk6hja0&quot;</span>,
-  <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13e000o0r8h8oofdzk5&quot;</span>,
-  <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;di@ed.kn&quot;</span>,
-  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;awaitingConfirmation&quot;</span>
+  <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g55000tjsp6onsk103d&quot;</span>,
+  <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g55000ujsp6ny3y7na6&quot;</span>,
+  <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;wiisiku@gab.kg&quot;</span>,
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;subscribed&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -653,7 +656,7 @@
               </div>
             </div>
           </div>
-          <div id="operation--lists--listId--recipients--recipientId--put" class="operation panel" data-traverse-target="operation--lists--listId--recipients--recipientId--put">
+          <div id="operation--dev--listId--recipients--recipientId--put" class="operation panel" data-traverse-target="operation--dev--listId--recipients--recipientId--put">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
@@ -669,14 +672,15 @@
               <div class="doc-copy">
                 <section class="swagger-operation-path">
                   <span class="operation-method">PUT</span>
-                  <span class="operation-path">/lists/{listId}/recipients/{recipientId}</span>
+                  <span class="operation-path">/dev/{listId}/recipients/{recipientId}</span>
                 </section>
               </div>
             </div>
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Updates the specified recipient.</p>
+                  <p>Updates the specified recipient. You can get the list ID in your
+                    <a target="_blank" href="https://app.moonmail.io/lists">MoonMail dashboard</a>, under the Settings tab after selecting your list</p>
                 </section>
               </div>
             </div>
@@ -749,13 +753,13 @@
                   <h5>Request Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
-    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Zachary&quot;</span>,
-    <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Morton&quot;</span>,
-    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;LS&quot;</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Danny&quot;</span>,
+    <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Griffin&quot;</span>,
+    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;PW&quot;</span>,
     <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
   },
   <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;subscribed&quot;</span>
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;awaitingConfirmation&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -798,8 +802,8 @@
                     <span>(422 Unprocessable Entity)</span>
                   </h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;elit qui mollit dolor sint&quot;</span>,
-  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;Excepteur proident aute&quot;</span>
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;in veniam&quot;</span>,
+  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;esse in dolor&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -835,7 +839,7 @@
               <p>Email recipients&#39; lists</p>
             </div>
           </div>
-          <div id="operation--lists--get" class="operation panel" data-traverse-target="operation--lists--get">
+          <div id="operation--dev--get" class="operation panel" data-traverse-target="operation--dev--get">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
@@ -851,14 +855,15 @@
               <div class="doc-copy">
                 <section class="swagger-operation-path">
                   <span class="operation-method">GET</span>
-                  <span class="operation-path">/lists/</span>
+                  <span class="operation-path">/dev/</span>
                 </section>
               </div>
             </div>
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Gets all the recipients&#39; lists of the specified user.</p>
+                  <p>Gets all the recipients&#39; lists of the specified user. You can get the list ID in your
+                    <a target="_blank" href="https://app.moonmail.io/lists">MoonMail dashboard</a>, under the Settings tab after selecting your list</p>
                 </section>
               </div>
             </div>
@@ -896,64 +901,104 @@
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
   <span class="hljs-attr">&quot;items&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">94424842</span>,
-      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">5534950</span>,
+      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">36684377</span>,
+      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">27212720</span>,
       <span class="hljs-attr">&quot;importStatus&quot;</span>: {},
-      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">55633767</span>,
-      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;Ut voluptate consequat elit&quot;</span>,
+      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">11103418</span>,
+      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;et qui non&quot;</span>,
       <span class="hljs-attr">&quot;metadataAttributes&quot;</span>: {},
-      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13700010r8hxh0kh9mt&quot;</span>,
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g500001jsp6k3qwryp3&quot;</span>,
+      <span class="hljs-attr">&quot;processed&quot;</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;archived&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">39942328</span>,
+      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">87164033</span>,
+      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g500002jsp6czzqet42&quot;</span>,
+      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">52435953</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;in adipisicing esse&quot;</span>,
+      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">15414959</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g500003jsp6qxmgrmyf&quot;</span>,
+      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">65890405</span>,
+      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://fiv.ms/rif&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">75742091</span>,
+      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">41752180</span>,
+      <span class="hljs-attr">&quot;importStatus&quot;</span>: {},
+      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">36649872</span>,
+      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;sunt in&quot;</span>,
+      <span class="hljs-attr">&quot;metadataAttributes&quot;</span>: {},
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g510004jsp6fia6kdpk&quot;</span>,
       <span class="hljs-attr">&quot;processed&quot;</span>: <span class="hljs-literal">false</span>,
       <span class="hljs-attr">&quot;archived&quot;</span>: <span class="hljs-literal">false</span>,
-      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">64007309</span>,
-      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">13037648</span>,
-      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13700020r8h79kwprpm&quot;</span>,
-      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">64573832</span>,
-      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;ea non ex&quot;</span>,
-      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">99464791</span>,
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13700030r8h2bqbdb1e&quot;</span>,
-      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">3883046</span>,
-      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://eri.si/muru&quot;</span>
+      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">31845943</span>,
+      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">45594060</span>,
+      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g510005jsp6kbrcwgfg&quot;</span>,
+      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">46337702</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;nostrud&quot;</span>,
+      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">97688155</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g510006jsp6indl7oy5&quot;</span>,
+      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">19897227</span>,
+      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://fawelro.net/napol&quot;</span>
     },
     {
-      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">81673227</span>,
-      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">54954480</span>,
+      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">11792180</span>,
+      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">64262712</span>,
       <span class="hljs-attr">&quot;importStatus&quot;</span>: {},
-      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">5717315</span>,
-      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;eu sit ut cupidatat est&quot;</span>,
+      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">48032590</span>,
+      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;laboris anim&quot;</span>,
       <span class="hljs-attr">&quot;metadataAttributes&quot;</span>: {},
-      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13900040r8hg10uyt64&quot;</span>,
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g520007jsp6uc3xj8kp&quot;</span>,
+      <span class="hljs-attr">&quot;processed&quot;</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;archived&quot;</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">31772308</span>,
+      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">29222099</span>,
+      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g520008jsp6c4e2khdf&quot;</span>,
+      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">28406790</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;ma&quot;</span>,
+      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">71409802</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g520009jsp6frpdcwpc&quot;</span>,
+      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">48494071</span>,
+      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://we.jp/merpiduv&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">24487406</span>,
+      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">10601499</span>,
+      <span class="hljs-attr">&quot;importStatus&quot;</span>: {},
+      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">97702045</span>,
+      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;aliqua qui&quot;</span>,
+      <span class="hljs-attr">&quot;metadataAttributes&quot;</span>: {},
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g52000ajsp6g669osgt&quot;</span>,
       <span class="hljs-attr">&quot;processed&quot;</span>: <span class="hljs-literal">false</span>,
       <span class="hljs-attr">&quot;archived&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">18397782</span>,
-      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">22428400</span>,
-      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13900050r8h813vyiq1&quot;</span>,
-      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">41407737</span>,
-      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Ut dolore in dolor in&quot;</span>,
-      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">52367559</span>,
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13900060r8hyhz850mc&quot;</span>,
-      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">60046891</span>,
-      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://nemicoz.mu/copiren&quot;</span>
+      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">77617620</span>,
+      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">44186026</span>,
+      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g52000bjsp6d7xmflje&quot;</span>,
+      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">22205778</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;proident occaecat dolor&quot;</span>,
+      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">80938602</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g52000cjsp6mbg6capv&quot;</span>,
+      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">20542308</span>,
+      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://tudku.de/une&quot;</span>
     },
     {
-      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">57404535</span>,
-      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">3307551</span>,
+      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">55940868</span>,
+      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">58932921</span>,
       <span class="hljs-attr">&quot;importStatus&quot;</span>: {},
-      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">13458796</span>,
-      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;elit nisi proident labore&quot;</span>,
+      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">20788396</span>,
+      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;et exercitation cupidatat&quot;</span>,
       <span class="hljs-attr">&quot;metadataAttributes&quot;</span>: {},
-      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13a00070r8hxsq9ewyd&quot;</span>,
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g52000djsp6htpv4clt&quot;</span>,
       <span class="hljs-attr">&quot;processed&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">&quot;archived&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">60133972</span>,
-      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">11174211</span>,
-      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13a00080r8h36m8wofs&quot;</span>,
-      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">3819609</span>,
-      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;eius&quot;</span>,
-      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">73807434</span>,
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13a00090r8hpmewnz8v&quot;</span>,
-      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">37596227</span>,
-      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://kojfiwpu.sr/maba&quot;</span>
+      <span class="hljs-attr">&quot;archived&quot;</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">21667760</span>,
+      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">5801337</span>,
+      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g52000ejsp6wgakdhzx&quot;</span>,
+      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">81290265</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;dolo&quot;</span>,
+      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">66389495</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g52000fjsp6oi8aa1fc&quot;</span>,
+      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">70010521</span>,
+      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://zogiw.tl/ob&quot;</span>
     }
   ]
 }
@@ -1016,7 +1061,7 @@
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
   <span class="hljs-attr">&quot;recipient&quot;</span>: {
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13100000r8hj6tjq3vk&quot;</span>
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g4v0000jsp62h87lccx&quot;</span>
   }
 }
 </code></pre>
@@ -1058,8 +1103,8 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;elit qui mollit dolor sint&quot;</span>,
-  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;Excepteur proident aute&quot;</span>
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;in veniam&quot;</span>,
+  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;esse in dolor&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -1111,13 +1156,13 @@
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
-    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Zachary&quot;</span>,
-    <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Morton&quot;</span>,
-    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;LS&quot;</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Danny&quot;</span>,
+    <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Griffin&quot;</span>,
+    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;PW&quot;</span>,
     <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
   },
   <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;subscribed&quot;</span>
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;awaitingConfirmation&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -1155,64 +1200,104 @@
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
   <span class="hljs-attr">&quot;items&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">94424842</span>,
-      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">5534950</span>,
+      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">36684377</span>,
+      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">27212720</span>,
       <span class="hljs-attr">&quot;importStatus&quot;</span>: {},
-      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">55633767</span>,
-      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;Ut voluptate consequat elit&quot;</span>,
+      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">11103418</span>,
+      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;et qui non&quot;</span>,
       <span class="hljs-attr">&quot;metadataAttributes&quot;</span>: {},
-      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13700010r8hxh0kh9mt&quot;</span>,
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g500001jsp6k3qwryp3&quot;</span>,
+      <span class="hljs-attr">&quot;processed&quot;</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;archived&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">39942328</span>,
+      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">87164033</span>,
+      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g500002jsp6czzqet42&quot;</span>,
+      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">52435953</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;in adipisicing esse&quot;</span>,
+      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">15414959</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g500003jsp6qxmgrmyf&quot;</span>,
+      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">65890405</span>,
+      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://fiv.ms/rif&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">75742091</span>,
+      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">41752180</span>,
+      <span class="hljs-attr">&quot;importStatus&quot;</span>: {},
+      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">36649872</span>,
+      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;sunt in&quot;</span>,
+      <span class="hljs-attr">&quot;metadataAttributes&quot;</span>: {},
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g510004jsp6fia6kdpk&quot;</span>,
       <span class="hljs-attr">&quot;processed&quot;</span>: <span class="hljs-literal">false</span>,
       <span class="hljs-attr">&quot;archived&quot;</span>: <span class="hljs-literal">false</span>,
-      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">64007309</span>,
-      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">13037648</span>,
-      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13700020r8h79kwprpm&quot;</span>,
-      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">64573832</span>,
-      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;ea non ex&quot;</span>,
-      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">99464791</span>,
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13700030r8h2bqbdb1e&quot;</span>,
-      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">3883046</span>,
-      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://eri.si/muru&quot;</span>
+      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">31845943</span>,
+      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">45594060</span>,
+      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g510005jsp6kbrcwgfg&quot;</span>,
+      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">46337702</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;nostrud&quot;</span>,
+      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">97688155</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g510006jsp6indl7oy5&quot;</span>,
+      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">19897227</span>,
+      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://fawelro.net/napol&quot;</span>
     },
     {
-      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">81673227</span>,
-      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">54954480</span>,
+      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">11792180</span>,
+      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">64262712</span>,
       <span class="hljs-attr">&quot;importStatus&quot;</span>: {},
-      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">5717315</span>,
-      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;eu sit ut cupidatat est&quot;</span>,
+      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">48032590</span>,
+      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;laboris anim&quot;</span>,
       <span class="hljs-attr">&quot;metadataAttributes&quot;</span>: {},
-      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13900040r8hg10uyt64&quot;</span>,
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g520007jsp6uc3xj8kp&quot;</span>,
+      <span class="hljs-attr">&quot;processed&quot;</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;archived&quot;</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">31772308</span>,
+      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">29222099</span>,
+      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g520008jsp6c4e2khdf&quot;</span>,
+      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">28406790</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;ma&quot;</span>,
+      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">71409802</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g520009jsp6frpdcwpc&quot;</span>,
+      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">48494071</span>,
+      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://we.jp/merpiduv&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">24487406</span>,
+      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">10601499</span>,
+      <span class="hljs-attr">&quot;importStatus&quot;</span>: {},
+      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">97702045</span>,
+      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;aliqua qui&quot;</span>,
+      <span class="hljs-attr">&quot;metadataAttributes&quot;</span>: {},
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g52000ajsp6g669osgt&quot;</span>,
       <span class="hljs-attr">&quot;processed&quot;</span>: <span class="hljs-literal">false</span>,
       <span class="hljs-attr">&quot;archived&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">18397782</span>,
-      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">22428400</span>,
-      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13900050r8h813vyiq1&quot;</span>,
-      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">41407737</span>,
-      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Ut dolore in dolor in&quot;</span>,
-      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">52367559</span>,
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13900060r8hyhz850mc&quot;</span>,
-      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">60046891</span>,
-      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://nemicoz.mu/copiren&quot;</span>
+      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">77617620</span>,
+      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">44186026</span>,
+      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g52000bjsp6d7xmflje&quot;</span>,
+      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">22205778</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;proident occaecat dolor&quot;</span>,
+      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">80938602</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g52000cjsp6mbg6capv&quot;</span>,
+      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">20542308</span>,
+      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://tudku.de/une&quot;</span>
     },
     {
-      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">57404535</span>,
-      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">3307551</span>,
+      <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">55940868</span>,
+      <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">58932921</span>,
       <span class="hljs-attr">&quot;importStatus&quot;</span>: {},
-      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">13458796</span>,
-      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;elit nisi proident labore&quot;</span>,
+      <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">20788396</span>,
+      <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;et exercitation cupidatat&quot;</span>,
       <span class="hljs-attr">&quot;metadataAttributes&quot;</span>: {},
-      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13a00070r8hxsq9ewyd&quot;</span>,
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g52000djsp6htpv4clt&quot;</span>,
       <span class="hljs-attr">&quot;processed&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">&quot;archived&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">60133972</span>,
-      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">11174211</span>,
-      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13a00080r8h36m8wofs&quot;</span>,
-      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">3819609</span>,
-      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;eius&quot;</span>,
-      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">73807434</span>,
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13a00090r8hpmewnz8v&quot;</span>,
-      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">37596227</span>,
-      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://kojfiwpu.sr/maba&quot;</span>
+      <span class="hljs-attr">&quot;archived&quot;</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">21667760</span>,
+      <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">5801337</span>,
+      <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g52000ejsp6wgakdhzx&quot;</span>,
+      <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">81290265</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;dolo&quot;</span>,
+      <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">66389495</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g52000fjsp6oi8aa1fc&quot;</span>,
+      <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">70010521</span>,
+      <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://zogiw.tl/ob&quot;</span>
     }
   ]
 }
@@ -1258,52 +1343,52 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">4297729</span>,
+  <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">74490385</span>,
   <span class="hljs-attr">&quot;items&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13b000a0r8hapcc3dx0&quot;</span>,
+      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g53000gjsp66a6djyoi&quot;</span>,
       <span class="hljs-attr">&quot;metadata&quot;</span>: {
-        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Amy&quot;</span>,
-        <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Collier&quot;</span>,
-        <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;MH&quot;</span>,
-        <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
-      },
-      <span class="hljs-attr">&quot;subscriptionOrigin&quot;</span>: <span class="hljs-string">&quot;signupForm&quot;</span>,
-      <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13b000b0r8h3ix6fz6q&quot;</span>,
-      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13b000c0r8h3znd0qol&quot;</span>,
-      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;kuplefjo@upezug.eu&quot;</span>,
-      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;awaitingConfirmation&quot;</span>
-    },
-    {
-      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13c000d0r8hzqo374qe&quot;</span>,
-      <span class="hljs-attr">&quot;metadata&quot;</span>: {
-        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Gertrude&quot;</span>,
-        <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Horton&quot;</span>,
-        <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;RU&quot;</span>,
-        <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
-      },
-      <span class="hljs-attr">&quot;subscriptionOrigin&quot;</span>: <span class="hljs-string">&quot;signupForm&quot;</span>,
-      <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13c000e0r8haccjox4u&quot;</span>,
-      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13c000f0r8h6lmo3ozc&quot;</span>,
-      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;ehli@camleijo.am&quot;</span>,
-      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;subscribed&quot;</span>
-    },
-    {
-      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13c000g0r8h5qui2or0&quot;</span>,
-      <span class="hljs-attr">&quot;metadata&quot;</span>: {
-        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Joseph&quot;</span>,
-        <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Simon&quot;</span>,
-        <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;HK&quot;</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Sallie&quot;</span>,
+        <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Brady&quot;</span>,
+        <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;JO&quot;</span>,
         <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
       },
       <span class="hljs-attr">&quot;subscriptionOrigin&quot;</span>: <span class="hljs-string">&quot;listImport&quot;</span>,
       <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13c000h0r8htao96w1i&quot;</span>,
-      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13c000i0r8hz1qv4fko&quot;</span>,
-      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;ju@wewhi.nz&quot;</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g53000hjsp6urb8602f&quot;</span>,
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g53000ijsp6r0takx2q&quot;</span>,
+      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;we@ub.tl&quot;</span>,
       <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;awaitingConfirmation&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000jjsp66y3nb17d&quot;</span>,
+      <span class="hljs-attr">&quot;metadata&quot;</span>: {
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Cynthia&quot;</span>,
+        <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Guzman&quot;</span>,
+        <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;NU&quot;</span>,
+        <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
+      },
+      <span class="hljs-attr">&quot;subscriptionOrigin&quot;</span>: <span class="hljs-string">&quot;api&quot;</span>,
+      <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000kjsp6pnxlx7wj&quot;</span>,
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000ljsp61tgmy0zp&quot;</span>,
+      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;zasubam@ehukala.rs&quot;</span>,
+      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;subscribed&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000mjsp6sxxffy87&quot;</span>,
+      <span class="hljs-attr">&quot;metadata&quot;</span>: {
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Helena&quot;</span>,
+        <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Bates&quot;</span>,
+        <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;UG&quot;</span>,
+        <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
+      },
+      <span class="hljs-attr">&quot;subscriptionOrigin&quot;</span>: <span class="hljs-string">&quot;manual&quot;</span>,
+      <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000njsp61vnk9ez4&quot;</span>,
+      <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000ojsp6rpwpo6ke&quot;</span>,
+      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;be@fok.kh&quot;</span>,
+      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;subscribed&quot;</span>
     }
   ]
 }
@@ -1346,13 +1431,13 @@
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
   <span class="hljs-attr">&quot;recipient&quot;</span>: {
     <span class="hljs-attr">&quot;metadata&quot;</span>: {
-      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Todd&quot;</span>,
-      <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Johnson&quot;</span>,
-      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;LS&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Antonio&quot;</span>,
+      <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Murphy&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;KP&quot;</span>,
       <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
     },
     <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">false</span>,
-    <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;aw@vegarce.re&quot;</span>,
+    <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;ejo@cej.mu&quot;</span>,
     <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;awaitingConfirmation&quot;</span>
   }
 }
@@ -1481,24 +1566,24 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">50157854</span>,
-  <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">59876425</span>,
+  <span class="hljs-attr">&quot;unsubscribedCount&quot;</span>: <span class="hljs-number">41069614</span>,
+  <span class="hljs-attr">&quot;complainedCount&quot;</span>: <span class="hljs-number">86136642</span>,
   <span class="hljs-attr">&quot;importStatus&quot;</span>: {},
-  <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">4051394</span>,
-  <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;sed&quot;</span>,
+  <span class="hljs-attr">&quot;bouncedCount&quot;</span>: <span class="hljs-number">79961047</span>,
+  <span class="hljs-attr">&quot;confirmationEmailBody&quot;</span>: <span class="hljs-string">&quot;proident esse sint&quot;</span>,
   <span class="hljs-attr">&quot;metadataAttributes&quot;</span>: {},
-  <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13d000j0r8htfdxdyfd&quot;</span>,
+  <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000pjsp6x1dz6fbr&quot;</span>,
   <span class="hljs-attr">&quot;processed&quot;</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">&quot;archived&quot;</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">2613996</span>,
-  <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">24119121</span>,
-  <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13d000k0r8h37ru3mvg&quot;</span>,
-  <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">46930246</span>,
-  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;aliquip aute sint ullamco&quot;</span>,
-  <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">48420816</span>,
-  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13d000l0r8hg078f0me&quot;</span>,
-  <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">27166653</span>,
-  <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://womgitfa.mt/pukizit&quot;</span>
+  <span class="hljs-attr">&quot;createdAt&quot;</span>: <span class="hljs-number">52891254</span>,
+  <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">87485096</span>,
+  <span class="hljs-attr">&quot;senderId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000qjsp6r2tqbxjk&quot;</span>,
+  <span class="hljs-attr">&quot;totalPostProcessed&quot;</span>: <span class="hljs-number">40295529</span>,
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;dolore eu ipsum elit&quot;</span>,
+  <span class="hljs-attr">&quot;subscribedCount&quot;</span>: <span class="hljs-number">94209638</span>,
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g54000rjsp6xm4plpdb&quot;</span>,
+  <span class="hljs-attr">&quot;awaitingConfirmationCount&quot;</span>: <span class="hljs-number">89764385</span>,
+  <span class="hljs-attr">&quot;successConfirmationUrl&quot;</span>: <span class="hljs-string">&quot;http://nukmoru.ug/wojzeguj&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -1587,19 +1672,19 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13e000m0r8hwa33bu94&quot;</span>,
+  <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g55000sjsp6c888a0ld&quot;</span>,
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
-    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Travis&quot;</span>,
-    <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Stone&quot;</span>,
-    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Marian&quot;</span>,
+    <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Jimenez&quot;</span>,
+    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;NZ&quot;</span>,
     <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
   },
   <span class="hljs-attr">&quot;subscriptionOrigin&quot;</span>: <span class="hljs-string">&quot;manual&quot;</span>,
-  <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjd2yw13e000n0r8humk6hja0&quot;</span>,
-  <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjd2yw13e000o0r8h8oofdzk5&quot;</span>,
-  <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;di@ed.kn&quot;</span>,
-  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;awaitingConfirmation&quot;</span>
+  <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;cjdvf8g55000tjsp6onsk103d&quot;</span>,
+  <span class="hljs-attr">&quot;userId&quot;</span>: <span class="hljs-string">&quot;cjdvf8g55000ujsp6ny3y7na6&quot;</span>,
+  <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;wiisiku@gab.kg&quot;</span>,
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;subscribed&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -1658,14 +1743,14 @@
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
-    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Winnie&quot;</span>,
-    <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Rivera&quot;</span>,
-    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;BI&quot;</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Annie&quot;</span>,
+    <span class="hljs-attr">&quot;surname&quot;</span>: <span class="hljs-string">&quot;Newman&quot;</span>,
+    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;ES&quot;</span>,
     <span class="hljs-attr">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>
   },
   <span class="hljs-attr">&quot;isConfirmed&quot;</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;bidvurfa@adacehfov.sz&quot;</span>,
-  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;awaitingConfirmation&quot;</span>
+  <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;catzecos@giwegaate.tv&quot;</span>,
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;subscribed&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
