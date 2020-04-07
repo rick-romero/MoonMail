@@ -15,6 +15,14 @@ With [MoonMail](https://moonmail.io/) you can: create & edit lists of recipients
 [See the wiki for detailed specs and infrastructure graphs.](https://github.com/microapps/MoonMail/wiki)
 
 
+## Others Commands to address some Issues
+```
+npm i babel-plugin-transform-builtin-extend
+npm install serverless-runtime-babel --save
+npm install --save-dev babel-plugin-transform-async-to-module-method
+npm i emitter
+```
+
 ## Live Features
 
 * [Create and store recipients in lists](https://github.com/microapps/MoonMail/wiki/Lists-&-recipients)
